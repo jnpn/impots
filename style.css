@@ -1,31 +1,37 @@
 table { width: 100% }
 
 thead {
-  font-weight: bold;
-  background-color: ghostwhite;
-  border-bottom: thin solid gainsboro;
+    font-weight: bold;
+    background-color: ghostwhite;
+    border-bottom: thin solid gainsboro;
 }
 
 tfoot {
-  color: crimson;
-  border-top: thin solid gainsboro;
+    color: crimson;
+    border-top: thin solid gainsboro;
 }
 
 tr:hover {
-  background-color: ghostwhite;
+    background-color: ghostwhite;
 }
 
 td {
-  text-align: right;
+    text-align: right;
 }
 
 footer {
-  text-align: center;
+    text-align: center;
 }
 
 code {
-  display: block;
-  width: 100%;
-  color: white;
-  background: #000;
+    display: block;
+    width: 100%;
+    color: white;
+    background: #000;
+}
+
+#tranches ul li {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 8px;
 }

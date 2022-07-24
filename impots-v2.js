@@ -74,6 +74,12 @@ var app = new Vue({
     revenu: 40000,
     frais: true,
     reduction: 10,
+    tranches: defaut.tranches,
+  },
+  filters:{
+    currency(value) {
+      return new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" }).format(value);
+    },
   },
   computed: {
     ref: function () {
