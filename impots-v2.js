@@ -66,9 +66,27 @@ function impots(revenu,tranches) {
 
 let reference = (revenu,is_frais,reduction) => is_frais ? revenu-(revenu*percentage(reduction)) : revenu
 
+// router
+const Home =     { template: '<div>home</div>' };
+const Settings = { template: '<div>settings</div>' };
+const Share =    { template: '<div>share</div>' };
+const Export =   { template: '<div>export</div>' };
+
+const routes = [
+  { path: '/', component: Home },
+  { path: '/settings', component: Settings },
+  { path: '/actions/share', component: Share },
+  { path: '/actions/export', component: Export },
+];
+
+const router = new VueRouter({
+  routes
+});
+
 // main
 
 var app = new Vue({
+  router,
   el: "#app",
   data: {
     revenu: 40000,

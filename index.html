@@ -11,99 +11,108 @@
     <body>
         <script src="https://cdn.jsdelivr.net/lodash/4/lodash.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.8/vue.min.js"></script>
-
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Impots | FR</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home<i class="bi-house"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#settings">Settings</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Actions
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item disabled"" href="#">Share</a></li>
-                                <li><a class="dropdown-item disabled"" href="#">Export</a></li>
-                                <li><hr class="dropdown-divider disabled""></li>
-                                <li><a class="dropdown-item disabled"" href="#">Else</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success disabled" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.5.4/vue-router.min.js" integrity="sha512-zxWuRslhjyZyRAYInXTNl4vC/vBBwLQuodFnPmvYAEvlv9XCCfi1R3KqBCsT6f9rk56OetG/7KS9dOfINL1KCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
         <div class="container" id="app">
 
-            <div id="calcul">
-                <div class="form-group">
-                    <label class="form-label" for="revenu">Revenu</label>
-                    <input id="revenu"
-                           class="form-control form-control-sm"
-                           placeholder="revenu"
-                           v-model="revenu">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Impots | FR</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <router-link class="nav-link active" aria-current="page" to="/">Home<i class="bi-house"></i></router-link>
+                            </li>
+                            <li class="nav-item">
+                                <router-link class="nav-link" to="/settings">Settings</router-link>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Actions
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><router-link class="dropdown-item" to="/actions/share">Share</router-link></li>
+                                    <li><router-link class="dropdown-item" to="/actions/export">Export</router-link></li>
+                                    <li><hr class="dropdown-divider disabled"></li>
+                                    <li><router-link class="dropdown-item" to="/actions/else">Else</router-link></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success disabled" type="submit">Search</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group form-check">
-                    <input class="form-check-input" id="frais" type="checkbox" v-model="frais">
-                    <label class="form-check-label" for="frais">-10% de frais</label>
-                </div>
-                <hr>
-                <table class="table-sm table-borderless">
-                    <caption>impots par tranche</caption>
-                    <thead class="thead-light">
-                        <tr>
-                            <td>tranche</td>
-                            <td>base</td>
-                            <td>taux</td>
-                            <td>montant</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="t in imp">
-                            <td>{{ t.hi }}</td>
-                            <td>{{ t.base }}</td>
-                            <td>{{ t.percent }}</td>
-                            <td>€{{ t.du.toFixed(2) }}</td>
-                        </tr>
-                        <tfoot>
+            </nav>
+
+            <div id="content">
+
+                <div id="calcul">
+                    <div class="form-group">
+                        <label class="form-label" for="revenu">Revenu</label>
+                        <input id="revenu"
+                               class="form-control form-control-sm"
+                               placeholder="revenu"
+                               v-model="revenu">
+                    </div>
+                    <div class="form-group form-check">
+                        <input class="form-check-input" id="frais" type="checkbox" v-model="frais">
+                        <label class="form-check-label" for="frais">-10% de frais</label>
+                    </div>
+                    <hr>
+                    <table class="table-sm table-borderless">
+                        <caption>impots par tranche</caption>
+                        <thead class="thead-light">
                             <tr>
-                                <td>reference</td>
-                                <td>{{ ref }}</td>
-                                <td>total</td>
-                                <td>{{ tot | currency }}</td>
+                                <td>tranche</td>
+                                <td>base</td>
+                                <td>taux</td>
+                                <td>montant</td>
                             </tr>
-                        </tfoot>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            <tr v-for="t in imp">
+                                <td>{{ t.hi }}</td>
+                                <td>{{ t.base }}</td>
+                                <td>{{ t.percent }}</td>
+                                <td>€{{ t.du.toFixed(2) }}</td>
+                            </tr>
+                            <tfoot>
+                                <tr>
+                                    <td>reference</td>
+                                    <td>{{ ref }}</td>
+                                    <td>total</td>
+                                    <td>{{ tot | currency }}</td>
+                                </tr>
+                            </tfoot>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="tranches" class="form-group">
+                    <label class="form-label">Tranches</label>
+                    <ul>
+                        <div v-for="t in tranches" class="input-group input-group-sm mb-1">
+                            <span class="input-group-text" id="lo">lo</span>
+                            <input type="number" class="form-control" v-model:value="t.lo" placeholder="low" aria-label="low" aria-describedby="">
+                            <span class="input-group-text" id="hi">hi</span>
+                            <input type="number" class="form-control" v-model:value="t.hi" placeholder="hi" aria-label="hi" aria-describedby="hi">
+                            <input type="number" class="form-control" v-model:value="t.percent" placeholder="%" aria-label="percent" aria-describedby="percent">
+                            <span class="input-group-text" id="percent">%</span>
+                        </div>
+                    </ul>
+                </div>
+
             </div>
 
-            <div id="tranches" class="form-group">
-                <label class="form-label">Tranches</label>
-                <ul>
-                    <div v-for="t in tranches" class="input-group input-group-sm mb-1">
-                        <span class="input-group-text" id="lo">lo</span>
-                        <input type="number" class="form-control" v-model:value="t.lo" placeholder="low" aria-label="low" aria-describedby="">
-                        <span class="input-group-text" id="hi">hi</span>
-                        <input type="number" class="form-control" v-model:value="t.hi" placeholder="hi" aria-label="hi" aria-describedby="hi">
-                        <input type="number" class="form-control" v-model:value="t.percent" placeholder="%" aria-label="percent" aria-describedby="percent">
-                        <span class="input-group-text" id="percent">%</span>
-                    </div>
-                </ul>
-            </div>
+            <router-view></router-view>
+
         </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
         <script src="./impots-v2.js"></script>
     </body>

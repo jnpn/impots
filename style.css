@@ -30,7 +30,7 @@ code {
     background: #000;
 }
 
-#app {
+#content {
   display: grid;
   grid-template-columns: repeat(2,1fr);
 }
