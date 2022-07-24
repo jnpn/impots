@@ -74,6 +74,7 @@ var app = new Vue({
     revenu: 40000,
     frais: true,
     reduction: 10,
+    tranches: defaut.tranches,
   },
   computed: {
     ref: function () {
