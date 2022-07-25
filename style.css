@@ -34,3 +34,6 @@ code {
   display: grid;
   grid-template-columns: repeat(2,1fr);
 }
+.counter {
+    margin: 1em;
+}
