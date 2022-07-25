@@ -109,66 +109,6 @@
                 </div>
             </nav>
 
-            <div id="content">
-
-                <div id="calcul">
-                    <div class="form-group">
-                        <label class="form-label" for="revenu">Revenu</label>
-                        <input id="revenu"
-                               class="form-control form-control-sm"
-                               placeholder="revenu"
-                               v-model="revenu">
-                    </div>
-                    <div class="form-group form-check">
-                        <input class="form-check-input" id="frais" type="checkbox" v-model="frais">
-                        <label class="form-check-label" for="frais">-10% de frais</label>
-                    </div>
-                    <hr>
-                    <table class="table-sm table-borderless">
-                        <caption>impots par tranche</caption>
-                        <thead class="thead-light">
-                            <tr>
-                                <td>tranche</td>
-                                <td>base</td>
-                                <td>taux</td>
-                                <td>montant</td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="t in imp">
-                                <td>{{ t.hi }}</td>
-                                <td>{{ t.base }}</td>
-                                <td>{{ t.percent }}</td>
-                                <td>€{{ t.du.toFixed(2) }}</td>
-                            </tr>
-                            <tfoot>
-                                <tr>
-                                    <td>reference</td>
-                                    <td>{{ ref }}</td>
-                                    <td>total</td>
-                                    <td>{{ tot | currency }}</td>
-                                </tr>
-                            </tfoot>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div id="tranches" class="form-group">
-                    <label class="form-label">Tranches</label>
-                    <ul>
-                        <div v-for="t in tranches" class="input-group input-group-sm mb-1">
-                            <span class="input-group-text" id="lo">lo</span>
-                            <input type="number" class="form-control" v-model:value="t.lo" placeholder="low" aria-label="low" aria-describedby="">
-                            <span class="input-group-text" id="hi">hi</span>
-                            <input type="number" class="form-control" v-model:value="t.hi" placeholder="hi" aria-label="hi" aria-describedby="hi">
-                            <input type="number" class="form-control" v-model:value="t.percent" placeholder="%" aria-label="percent" aria-describedby="percent">
-                            <span class="input-group-text" id="percent">%</span>
-                        </div>
-                    </ul>
-                </div>
-
-            </div>
-
             <router-view></router-view>
 
         </div>
