@@ -12,6 +12,49 @@
         <script src="https://cdn.jsdelivr.net/lodash/4/lodash.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.8/vue.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.5.4/vue-router.min.js" integrity="sha512-zxWuRslhjyZyRAYInXTNl4vC/vBBwLQuodFnPmvYAEvlv9XCCfi1R3KqBCsT6f9rk56OetG/7KS9dOfINL1KCQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="text/x-template" id="template-impots">
+            <div>
+                <div class="form-group">
+                    <label class="form-label" for="revenu">Revenu</label>
+                    <input id="revenu"
+                           class="form-control form-control-sm"
+                           placeholder="revenu"
+                           v-model="revenu">
+                </div>
+                <div class="form-group form-check">
+                    <input class="form-check-input" id="frais" type="checkbox" v-model="frais">
+                    <label class="form-check-label" for="frais">-10% de frais</label>
+                </div>
+                <hr>
+                <table class="table-sm table-borderless">
+                    <caption>impots par tranche</caption>
+                    <thead class="thead-light">
+                        <tr>
+                            <td>tranche</td>
+                            <td>base</td>
+                            <td>taux</td>
+                            <td>montant</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="t in imp">
+                            <td>{{ t.hi }}</td>
+                            <td>{{ t.base }}</td>
+                            <td>{{ t.percent }}</td>
+                            <td>€{{ t.du.toFixed(2) }}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>reference</td>
+                            <td>{{ ref }}</td>
+                            <td>total</td>
+                            <td>{{ tot | currency }}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </script>
 
         <div class="container" id="app">
 
