@@ -7,6 +7,9 @@ export const useUserStore = defineStore('user', () => {
   const savedName = ref('')
   const previousNames = ref(new Set<string>())
 
+  const revenu = ref(46000)
+  const charges = ref(0.77)
+
   const usedNames = computed(() => Array.from(previousNames.value))
   const otherNames = computed(() => usedNames.value.filter(name => name !== savedName.value))
 
@@ -27,6 +30,8 @@ export const useUserStore = defineStore('user', () => {
     setNewName,
     otherNames,
     savedName,
+    revenu,
+    charges,
   }
 })
 
