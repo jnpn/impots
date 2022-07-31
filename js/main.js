@@ -7,7 +7,6 @@ const app = new Vue({
   data () {
     return {
       app: 'Impots | FR',
-      specs: def_spec,
     }
   },
   mounted () {
