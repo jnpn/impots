@@ -40,3 +40,7 @@ code {
 .counter {
     margin: 1em;
 }
+label[for="revenu"]:hover {
+    color: var(--bs-primary); /* deeppink; */
+    cursor: pointer;
+}
