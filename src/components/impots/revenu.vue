@@ -68,8 +68,8 @@
         autofocus
       />
     </p>
-    <p>net: {{ net.toFixed() }} €</p>
-    <p>mensuel: {{ mensuel.toFixed() }} €</p>
+    <p>{{ t('taxed') }}: {{ net.toFixed() }} €</p>
+    <p>{{ t('monthly') }} {{ mensuel.toFixed() }} €</p>
     <tranches :revenu="revenu" />
   </div>
 </template>

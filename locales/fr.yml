@@ -18,4 +18,5 @@ max: max
 ratio: taux
 base: base
 due: du
-
+taxed: net
+monthly: mensuel
