@@ -49,3 +49,7 @@ label[for="revenu"]:hover {
     color: var(--bs-primary); /* deeppink; */
     cursor: pointer;
 }
+
+td:empty::after {
+    content: '-';
+}
