@@ -6,7 +6,8 @@ const app = new Vue({
   el: "#app",
   data () {
     return {
-      app: 'Impots | FR'
+      app: 'Impots | FR',
+      specs: def_spec,
     }
   },
   mounted () {
