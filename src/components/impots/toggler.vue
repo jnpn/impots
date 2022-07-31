@@ -1,7 +1,5 @@
-
-// toggler
-
-const Toggler = Vue.component('toggler', {
+<script setup lang="ts">
+  export default {
   props: ['onto'],
   data () {
     return {
@@ -21,12 +19,16 @@ const Toggler = Vue.component('toggler', {
         router.push(this.previous || def);
         this.previous = null;
       }
-    }
-  },
-  template: `<div class="toggler">
-  <button type="button" class="btn btn-sm" @click="go">
-      <i v-if="previous" class="bi bi-gear-fill"></i>
-      <i v-else class="bi bi-gear"></i>
-  </button>
-<div>`,
-});
+    },
+   }
+  }
+</script>
+
+<template>
+  <div class="toggler">
+    <button type="button" class="btn btn-sm" @click="go">
+        <i v-if="previous" class="bi bi-gear-fill"></i>
+        <i v-else class="bi bi-gear"></i>
+    </button>
+  <div>
+</template>
