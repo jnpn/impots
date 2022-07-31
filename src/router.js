@@ -1,22 +1,23 @@
-
 // router
 
-const Dummy =    { template: '<div>?</div>' };
-const About =    { template: `<div>
+const Dummy = { template: "<div>?</div>" };
+const About = {
+  template: `<div>
 <p>Calculer vos impots par tranches. [wip]</p>
 <p>© <a href="https://github.com/jnpn/impots">jnpn</a> {{ new Date().getFullYear() }}</p>
-</div>` };
+</div>`,
+};
 
 const routes = [
-  { path: '/', component: Impots, props: { defaultRevenu: config.revenu }},
-  { path: '/settings', component: Settings },
-  { path: '/about', component: About },
-  { path: '/actions/share', component: Dummy },
-  { path: '/actions/export', component: Dummy },
+  { path: "/", component: Impots, props: { defaultRevenu: config.revenu } },
+  { path: "/settings", component: Settings },
+  { path: "/about", component: About },
+  { path: "/actions/share", component: Dummy },
+  { path: "/actions/export", component: Dummy },
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
 });
 
-router.onReady(() => new Logger('impots.router').log('ready'));
+router.onReady(() => new Logger("impots.router").log("ready"));

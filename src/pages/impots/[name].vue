@@ -12,14 +12,14 @@ watchEffect(() => {
 <template>
   <div>
     <div text-4xl>
-      <div i-carbon-piggy-bank inline-block />
+      <div i-carbon-piggy-bank inline-block></div>
     </div>
     <p>
       {{ t('intro.hi', { name: props.name }) }}
     </p>
 
     <template v-if="user.otherNames.length">
-      <p text-sm mt-4>
+      <div text-sm mt-4>
         <span opacity-75>{{ t('intro.aka') }}:</span>
         <ul>
           <li v-for="otherName in user.otherNames" :key="otherName">
@@ -28,7 +28,7 @@ watchEffect(() => {
             </router-link>
           </li>
         </ul>
-      </p>
+      </div>
     </template>
 
     <revenu />

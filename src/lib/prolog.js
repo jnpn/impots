@@ -63,6 +63,6 @@ const iso_c = `
 
 `;
 
-function prolog (prolog=default_prolog) {
+function prolog(prolog = default_prolog) {
   console.log(prolog);
 }

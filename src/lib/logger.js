@@ -1,16 +1,16 @@
-function Logger (app, options={}) {
+function Logger(app, options = {}) {
   return {
-    log (...args) {
+    log(...args) {
       console.log(app, ...args);
     },
-    info (...args) {
+    info(...args) {
       console.info(app, ...args);
     },
-    warn (...args) {
+    warn(...args) {
       console.warn(app, ...args);
     },
-    debug (...args) {
+    debug(...args) {
       console.debug(app, ...args);
     },
-  }
+  };
 }

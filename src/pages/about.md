@@ -11,5 +11,5 @@ title: About
 [Impots](https://github.com/jnpn/impots) is a micro vue3/vitesse app for computing taxes.
 
 ```js
-const fact = n => (n < 2) ? 1 : fact(n - 1);
+const fact = (n) => (n < 2 ? 1 : fact(n - 1));
 ```

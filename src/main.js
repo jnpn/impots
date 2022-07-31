@@ -1,18 +1,16 @@
-
 // main
 
 const app = new Vue({
   router,
   el: "#app",
-  data () {
+  data() {
     return {
-      app: 'Impots | FR',
-    }
+      app: "Impots | FR",
+    };
   },
-  mounted () {
-    const LOG = new Logger('impots.main');
+  mounted() {
+    const LOG = new Logger("impots.main");
     console.log(big);
-    LOG.log('ready');
+    LOG.log("ready");
   },
 });
-
