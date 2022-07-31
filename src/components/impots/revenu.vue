@@ -55,6 +55,6 @@
     </p>
     <p>net: {{ net.toFixed() }} €</p>
     <p>mensuel: {{ mensuel.toFixed() }} €</p>
-    <rtable :revenu="revenu" />
+    <tranches :revenu="revenu" />
   </div>
 </template>
