@@ -17,7 +17,7 @@ const { t } = useI18n()
       <div i-carbon-piggy-bank-slot inline-block />
     </div>
     <p>
-      <a rel="noreferrer" href="https://github.com/antfu/vitesse" target="_blank">
+      <a rel="noreferrer" href="https://github.com/jnpn/impots" target="_blank">
         Impots
       </a>
     </p>
