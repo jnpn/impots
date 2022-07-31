@@ -31,6 +31,43 @@
             </div>
         </script>
 
+        <script type="text/x-template" id="template-tranches">
+            <div class="tranches">
+                <div>
+                    <!-- <div class="spec" class="input-group input-group-sm mb-1"
+                         v-for="s in specs">
+                         <span class="input-group-text">seuil</span>
+                         <input type="number" class="form-control" v-model:value="s[0]" />
+                         <span class="input-group-text">percent</span>
+                         <input type="number" class="form-control" v-model:value="s[1]" />
+                         </div>
+                    -->
+                    <div class="spec" class="input-group input-group-sm mb-1" >
+                        <input type="number" v-for="s in specs" class="form-control" v-model:value="s[0]" />
+                    </div>
+
+                </div>
+                <div>
+                <table>
+                    <thead>
+                        <th>\</th>
+                        <td>min</td>
+                        <td>max</td>
+                        <td>per</td>
+                        <td>max-pre</td>
+                    </thead>
+                    <tr v-for="st in sousTranches.ts">
+                        <th>tr.</th>
+                        <td>{{ st.z | currency }}</td>
+                        <td>{{ (st.s >= config.absurdly_high) ? Infinity : st.s | currency }}</td>
+                        <td>{{ st.p | currency }}</td>
+                        <td>{{ st.p * (st.s - st.z) / 100 | currency }}</td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        </script>
+
         <script type="text/x-template" id="template-settings">
             <div id="tranches" class="form-group">
                 <label class="form-label">Tranches</label>
