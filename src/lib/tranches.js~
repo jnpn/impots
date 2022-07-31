@@ -1,0 +1,22 @@
+const spec = [
+  [9964, 0],
+  [27519, 1],
+  [73779, 3],
+  [156244, 4],
+  [Number.MAX_VALUE, 4],
+]
+
+const tranches = (spec) => {
+  // 0 -> ... -> Number.MAX_VALUE
+  const z = {z:0, ts:[]};
+  const r = ({z,ts}, [s,p]) => {
+    // (z,ts) -> (s,[{z,s,p}])
+    return {
+      z:s,
+      ts: ts.concat([{z:z, s:s, p:p}]),
+    }
+  };
+  return spec.reduce(r, z);
+}
+
+//console.dir(tranches(spec));
