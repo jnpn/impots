@@ -10,14 +10,15 @@ const Toggler = Vue.component('toggler', {
   },
   methods: {
     go () {
+      const def = '/';
       const router = this.$router;
-      const current = router.currentRoute.path;
+      const current = this.$route;
       const onto = this.$props.onto;
       if (onto !== current) {
         this.previous = current;
-        router.push(onto || '/');
+        router.push(onto || def);
       } else {
-        router.push(this.previous || '/');
+        router.push(this.previous || def);
         this.previous = null;
       }
     }
