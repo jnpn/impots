@@ -17,7 +17,16 @@ const Impots = Vue.component('impots', {
       return new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" }).format(value);
     },
   },
+  methods: {
+    reset () { this.revenu = this.$props.defaultRevenu; },
+  },
   computed: {
+    donsMax () {
+      return this.revenu * 22 / 100;
+    },
+    reducMax () {
+      return this.donsMax * 66 / 100;
+    },
     ref: function () {
       return reference(this.revenu, this.frais, this.reduction)
     },
