@@ -31,6 +31,8 @@ watchEffect(() => {
       </p>
     </template>
 
+    <revenu />
+
     <div>
       <button
         btn m="3 t6" text-sm
