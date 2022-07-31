@@ -20,6 +20,7 @@
                 <button type="button" class="btn btn-sm" @click="hidden = !hidden"
                         :class="[ hidden ? 'btn-secondary' : 'btn-primary' ]"
                         title="click to hide" aria-label="click to hide" tooltip="click to hide">
+                    <slot name="hider-button-text"></slot>
                     <slot name="hider-button-icon">
                         <i v-if="hidden" class="bi bi-toggle-off"></i>
                         <i v-else class="bi bi-toggle-on"></i>

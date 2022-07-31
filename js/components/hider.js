@@ -2,9 +2,10 @@
 // hider
 
 const Hider = Vue.component('hider', {
+  props: ['startsHidden'],
   data () {
     return {
-      hidden: false,
+      hidden: this.$props.startsHidden,
     };
   },
   template: '#template-hider',
