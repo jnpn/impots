@@ -2,9 +2,10 @@
 // impots
 
 const Impots = Vue.component('impots', {
+  props: ['defaultRevenu'],
   data () {
     return {
-      revenu: 40000,
+      revenu: this.$props.defaultRevenu,
       frais: true,
       reduction: 10,
       tranches: config.tranches,
