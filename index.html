@@ -190,6 +190,13 @@
 
             <router-view></router-view>
 
+            <hider :startsHidden="true">
+                <template v-slot:hider-button-text>
+                    tranches
+                </template>
+                <tranches :specs="def_spec"></tranches>
+            </hider>
+
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
@@ -197,9 +204,11 @@
         <!-- App -->
 
         <script src="./js/lib/impots.js"></script>
+        <script src="./js/lib/tranches.js"></script>
         <script src="./js/lib/prolog.js"></script>
         <script src="./js/lib/logger.js"></script>
         <script src="./js/components/toggler.js"></script>
+        <script src="./js/components/tranches.js"></script>
         <script src="./js/components/counter.js"></script>
         <script src="./js/components/hider.js"></script>
         <script src="./js/components/impots.js"></script>
