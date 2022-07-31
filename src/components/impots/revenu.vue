@@ -73,3 +73,10 @@
     <tranches :revenu="revenu" />
   </div>
 </template>
+
+<style>
+  label[for="revenu"]:hover {
+    color: var(--un-ring-color);
+    cursor: pointer;
+  }
+</style>
