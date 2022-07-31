@@ -1,5 +1,8 @@
 // une tranche est un intervalle et un pourcentage
 const config = {
+  revenu: 46000,
+  charges: 0.77,
+  absurdly_high: 999999,
   tranches: [
     {lo:0, hi:9964, percent:0},
     {lo:9964, hi:27519, percent:14},
