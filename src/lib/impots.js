@@ -1,5 +1,7 @@
+import _ from 'lodash'
+
 // une tranche est un intervalle et un pourcentage
-const config = {
+export const config = {
   revenu: 46000,
   charges: 0.77,
   absurdly_high: 999999,
@@ -53,7 +55,7 @@ function part(value,lo,hi) {
 //
 
 
-function impots(revenu,tranches) {
+export function impots(revenu,tranches) {
   const ponction = ({lo:lo,hi:hi,percent:percent}) => {
     const base = part(revenu,lo,hi)
     const ratio = percentage(revenu,base)
@@ -67,4 +69,4 @@ function impots(revenu,tranches) {
     .value()
 }
 
-const reference = (revenu,is_frais,reduction) => is_frais ? revenu-(revenu*percentage(reduction)) : revenu;
+export const reference = (revenu,is_frais,reduction) => is_frais ? revenu-(revenu*percentage(reduction)) : revenu;

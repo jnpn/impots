@@ -1,6 +1,6 @@
 <script lang="ts">
   import { useI18n } from 'vue-i18n'
-  import { config, fimpots, reference } from '~/lib/impots.js'
+  import { config, impots, reference } from '~/lib/impots.js'
   export default {
   props: ['revenu'],
     setup() {
@@ -12,7 +12,7 @@
   },
   methods: {},
   computed: {
-   imp () { return fimpots(this.revenu, config.tranches); }
+   imp () { return impots(this.revenu, config.tranches); }
   },
   }
 </script>
