@@ -18,3 +18,5 @@ const routes = [
 const router = new VueRouter({
   routes
 });
+
+router.onReady(() => new Logger('impots.router').log('ready'));

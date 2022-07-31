@@ -8,5 +8,11 @@ const app = new Vue({
     return {
       app: 'Impots | FR'
     }
-  }
+  },
+  mounted () {
+    const LOG = new Logger('impots.main');
+    console.log(big);
+    LOG.log('ready');
+  },
 });
+
