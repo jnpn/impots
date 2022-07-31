@@ -18,10 +18,6 @@ watchEffect(() => {
       {{ t('intro.hi', { name: props.name }) }}
     </p>
 
-    <p text-sm opacity-75>
-      <em>{{ t('intro.dynamic-route') }}</em>
-    </p>
-
     <template v-if="user.otherNames.length">
       <p text-sm mt-4>
         <span opacity-75>{{ t('intro.aka') }}:</span>
