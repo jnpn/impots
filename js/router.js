@@ -8,7 +8,7 @@ const About =    { template: `<div>
 </div>` };
 
 const routes = [
-  { path: '/', component: Impots },
+  { path: '/', component: Impots, props: { defaultRevenu: config.revenu }},
   { path: '/settings', component: Settings },
   { path: '/about', component: About },
   { path: '/actions/share', component: Dummy },
