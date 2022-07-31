@@ -14,6 +14,22 @@
     <body>
 
         <!-- Templates -->
+
+        <script type="text/x-template" id="template-hider">
+            <div class="hider">
+                <button type="button" class="btn btn-sm" @click="hidden = !hidden"
+                        :class="[ hidden ? 'btn-secondary' : 'btn-primary' ]"
+                        title="click to hide" aria-label="click to hide" tooltip="click to hide">
+                    <slot name="hider-button-icon">
+                        <i v-if="hidden" class="bi bi-toggle-off"></i>
+                        <i v-else class="bi bi-toggle-on"></i>
+                    </slot>
+                </button>
+                <slot name="hider-mini-view" v-if="hidden"><i class="bi bi-caret-right"></i></slot>
+                <slot v-if="!hidden">fallback when visible</slot>
+            </div>
+        </script>
+
         <script type="text/x-template" id="template-settings">
             <div id="tranches" class="form-group">
                 <label class="form-label">Tranches</label>
