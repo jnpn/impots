@@ -1,9 +1,6 @@
 <script lang="ts">
   import { useI18n } from "vue-i18n";
-
-  const user = useUserStore();
-  const revenu = $ref(user.revenu);
-  const charges = $ref(user.charges);
+  import { charges, revenu } from '~/appconfig'
 
   export default {
     setup() {
