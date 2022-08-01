@@ -19,12 +19,6 @@
       },
     },
     computed: {
-      net() {
-        return this.revenu * this.charges;
-      },
-      mensuel() {
-        return this.net / 12;
-      },
     },
   };
 </script>
@@ -65,9 +59,7 @@
         autofocus
       />
     </p>
-    <p>{{ t('taxed') }}: {{ net.toFixed() }} €</p>
-    <p>{{ t('monthly') }} {{ mensuel.toFixed() }} €</p>
-    <tranches :revenu="revenu" />
+    <tranches :revenu="revenu" :charges="charges"/>
   </div>
 </template>
 

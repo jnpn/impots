@@ -2,7 +2,7 @@
   import { useI18n } from "vue-i18n";
   import { config, impots, reference } from "~/lib/impots.js";
   export default {
-    props: ["revenu"],
+    props: ["revenu", "charges"],
     setup() {
       const { t } = useI18n(); // use as global scope
       return { t };
@@ -15,11 +15,25 @@
       imp() {
         return impots(this.revenu, config.tranches);
       },
+      net() {
+        return this.revenu * this.charges;
+      },
+      mensuel() {
+        return this.net / 12;
+      },
     },
   };
 </script>
 
 <template>
+  <div class="container">
+    <table>
+      <tr>
+        <td>{{ t('taxed') }}</td><td>{{ net.toFixed() }} €</td>
+        <td>{{ t('monthly') }}</td><td>{{ mensuel.toFixed() }} €</td>
+      </tr>
+    </table>
+  </div>
   <div class="container">
     <table class="table">
       <thead>
