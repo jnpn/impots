@@ -9,7 +9,7 @@ _/  _/    _/    _/  _/_/_/      _/_/        _/_/  _/_/_/
                   _/                                           
 `;
 
-const big = `
+export const big = `
  _                       _       
 (_)                     | |      
  _ _ __ ___  _ __   ___ | |_ ___ 
@@ -63,6 +63,6 @@ const iso_c = `
 
 `;
 
-function prolog(prolog = default_prolog) {
+export function prolog(prolog = default_prolog) {
   console.log(prolog);
 }

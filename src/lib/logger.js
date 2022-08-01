@@ -1,4 +1,4 @@
-function Logger(app, options = {}) {
+export function Logger(app, options = {}) {
   return {
     log(...args) {
       console.log(app, ...args);
