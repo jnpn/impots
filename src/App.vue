@@ -2,7 +2,7 @@
   useHead({
     title: "Impots",
     meta: [
-      { name: "description", content: "Opinionated Vite Starter Template" },
+      { name: "description", content: "Impots" },
       {
         name: "theme-color",
         content: computed(() => (isDark.value ? "#00aba9" : "#ffffff")),
