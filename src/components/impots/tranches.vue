@@ -27,7 +27,7 @@
 
 <template>
   <div class="container">
-    <table>
+    <table class="table">
       <tr>
         <td>{{ t('taxed') }}</td><td>{{ net.toFixed() }} €</td>
         <td>{{ t('monthly') }}</td><td>{{ mensuel.toFixed() }} €</td>
