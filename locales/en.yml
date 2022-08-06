@@ -1,0 +1,22 @@
+button:
+  about: About
+  back: Back
+  go: GO
+  home: Home
+  toggle_dark: Toggle dark mode
+  toggle_langs: Change languages
+intro:
+  desc: Taxes microapp
+  dynamic-route: Demo of dynamic route
+  hi: Hi, {name}!
+  aka: Also known as
+  whats-your-name: What's your name?
+not-found: Not found
+salary: Salary
+min: min
+max: max
+ratio: ratio
+base: base
+due: due
+taxed: taxed
+monthly: monthly
