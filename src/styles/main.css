@@ -27,3 +27,29 @@ html.dark {
   width: 100%;
   height: 2px;
 }
+
+/**/
+
+:root {
+    --theme-dark: #374151;
+}
+
+thead {
+    font-weight: bold;
+    background-color: ghostwhite;
+    border-bottom: thin solid gainsboro;
+}
+
+tfoot {
+    color: var(--bs-danger);
+    border-top: thin solid gainsboro;
+}
+
+tr:hover {
+    background-color: ghostwhite;
+}
+table {
+    color: var(--theme-dark);
+    width: 70%;
+    table-layout:fixed;
+}
